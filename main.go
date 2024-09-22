@@ -257,10 +257,11 @@ func isUserInTeam(username, token string) bool {
 func main() {
 	clientID = os.Getenv("GITHUB_CLIENT_ID")
 	clientSecret = os.Getenv("GITHUB_CLIENT_SECRET")
+
 	redirectURI = os.Getenv("REDIRECT_URI")
 	teamSlug = os.Getenv("GITHUB_TEAM_SLUG")
 	org = os.Getenv("GITHUB_ORG")
-	secretKey = os.Getenv("SESSION_SECRET_KEY") // Load secret key
+	secretKey = os.Getenv("SESSION_SECRET_KEY")
 
 	http.HandleFunc("/login", loginHandler)
 	http.HandleFunc("/callback", callbackHandler)
